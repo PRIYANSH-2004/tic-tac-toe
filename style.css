@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    color: rgb(215, 128, 23);
+    background-color:rgb(33, 36, 39);
+}
+
+#name{
+    color: blue;
+}
+
+#reset {
+    background-color: greenyellow;
+    font-size: 4vb;
+    border-radius: 10%;
+    font-weight: 1000;
+}
+.row{
+    margin-top: 4px;
+}
+.box{
+    border: 5px solid black;
+    height: 15vb;
+    width: 15vb;
+    background-color: pink;
+    font-size: 10vb;
+    text-align: center;
+}
+#print{
+    color: rgb(225, 255, 0);
+    font-size: 10vb;
+}

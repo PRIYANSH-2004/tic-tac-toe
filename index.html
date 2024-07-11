@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="tic_tac_toe.js"></script> -->
+    <script src="updated.js"></script>
+</head>
+<body>
+    <h1>
+        Tic Tac Toe by <span id="name">Priyansh</span>
+    </h1>
+    <div id="board">
+        <div class="row">
+            <input id='a1' class="box" type="text" readonly onclick=" func11(); checkWin();" >
+            <input id='a2' class="box" type="text" readonly onclick=" func12(); checkWin();" >
+            <input id='a3' class="box" type="text" readonly onclick=" func13(); checkWin();" >
+        </div>
+        <div class="row">
+            <input id='b1' class="box" type="text" readonly onclick=" func21(); checkWin();" >
+            <input id='b2' class="box" type="text" readonly onclick=" func22(); checkWin();" >
+            <input id='b3' class="box" type="text" readonly onclick=" func23(); checkWin();" >
+        </div>
+        <div class="row">
+            <input id='c1' class="box" type="text" readonly onclick=" func31(); checkWin();" >
+            <input id='c2' class="box" type="text" readonly onclick=" func32(); checkWin();" >
+            <input id='c3' class="box" type="text" readonly onclick=" func33(); checkWin();" >
+        </div>
+        
+
+
+    </div>
+    <br>
+    <br>
+
+    <button id="reset" onclick="reset()">
+        RESET
+    </button>
+    <br>
+    <p id="print"></p>
+</body>
+</html>
