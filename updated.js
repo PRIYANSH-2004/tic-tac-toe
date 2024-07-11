@@ -1,7 +1,22 @@
 // const { disable } = require("colors");
 
 let flag = false
+let scoreX=localStorage.getItem("scoreX")
+let scoreY=localStorage.getItem('scoreY')
+if( parseInt(scoreX)>1 || parseInt(scoreY) >1){
+    
+    localStorage.setItem("scoreX","0")
+    localStorage.setItem("scoreY","0")
+    scoreY=0
+    scoreX=0
+    // document.getElementById("print").innerHTML = (parseInt(scoreX) > parseInt(scoreY)) ?"X is Champion" : "O is Champion"
+}
+// document.getElementById("O").value = "hiiji"
 
+window.onload = function() {
+    document.getElementById("X").value =scoreX
+    document.getElementById("O").value =scoreY
+}
 
 function disableAllButtons() {
     let buttons= document.querySelectorAll("input[type=text]")
@@ -9,6 +24,7 @@ function disableAllButtons() {
 }
 
 function checkWin(){
+    
     let a1, a2, a3, b1, b2, b3, c1, c2, c3;
     let a1btn, a2btn, a3btn, b1btn, b2btn, b3btn, c1btn, c2btn, c3btn;
     
@@ -33,7 +49,7 @@ function checkWin(){
     
     b1btn=document.getElementById('b1')
     b2btn=document.getElementById('b2')
-    b3btn=document.getElementById('a3')
+    b3btn=document.getElementById('b3')
     
     c1btn=document.getElementById('c1')
     c2btn=document.getElementById('c2')
@@ -55,17 +71,28 @@ function checkWin(){
     for(let i=0;i<winArr.length ;i++){
         if(winArr[i].every(val => val=='X' || val=='x')){
             document.getElementById('print').innerHTML= "Player X Won"
-            
+            scoreX = parseInt(scoreX) +1
+            localStorage.setItem("scoreX" , scoreX)
+
+            document.getElementById("X").value =scoreX
+            document.getElementById("O").value =scoreY
+
             winButton[i].forEach( btn=> btn.style.color='red')
             disableAllButtons();
+            // alert(scoreX)
             return
-            
         }
         if(winArr[i].every(val => val=='O' || val=='o')){
             document.getElementById('print').innerHTML= "Player O Won"
-            
+            scoreY = parseInt(scoreY) +1
+            localStorage.setItem("scoreY" , scoreY)   
+
+            document.getElementById("X").value =scoreX
+            document.getElementById("O").value =scoreY
+
             winButton[i].forEach( btn=> btn.style.color='red')
             disableAllButtons();
+            // alert(scoreY)
             return
             
         }
